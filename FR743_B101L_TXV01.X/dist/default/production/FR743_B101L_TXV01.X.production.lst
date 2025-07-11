@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
-                                                                                               Thu Jul 10 13:47:41 2025
+                                                                                               Fri Jul 11 16:35:26 2025
 
 Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
      1                           	processor	16F1936
@@ -1448,7 +1448,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1434     0671  3400               	retlw	0
   1435     0672  3408               	retlw	8
   1436     0673  3414               	retlw	20
-  1437     0674  3428               	retlw	40
+  1437     0674  341E               	retlw	30
   1438     0675  3442               	retlw	low (_SW_STATE_Data| 0)
   1439     0676                     __end_of_scheduleTable:
   1440     000E                     _PORTCbits	set	14
@@ -2141,7 +2141,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2127 ;;
   2128 ;; *************** function _main *****************
   2129 ;; Defined at:
-  2130 ;;		line 76 in file "main.c"
+  2130 ;;		line 74 in file "main.c"
   2131 ;; Parameters:    Size  Location     Type
   2132 ;;		None
   2133 ;; Auto vars:     Size  Location     Type
@@ -2177,276 +2177,276 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2163                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   2164                           
   2165                           
-  2166                           ;main.c: 78:   SYSTEM_Initialize();
+  2166                           ;main.c: 77:   SYSTEM_Initialize();
   2167     0192  3186  2608  3181   	fcall	_SYSTEM_Initialize
   2168     0195                     l2362:
   2169                           
-  2170                           ;main.c: 84:   (INTCONbits.GIE = 1);
+  2170                           ;main.c: 83:   (INTCONbits.GIE = 1);
   2171     0195  178B               	bsf	11,7	;volatile
   2172     0196                     l2364:
   2173                           
-  2174                           ;main.c: 87:   (INTCONbits.PEIE = 1);
+  2174                           ;main.c: 86:   (INTCONbits.PEIE = 1);
   2175     0196  170B               	bsf	11,6	;volatile
   2176     0197                     l2366:
   2177                           
-  2178                           ;main.c: 95:   SW_STATE_Data[0] = 0x24;
+  2178                           ;main.c: 94:   SW_STATE_Data[0] = 0x24;
   2179     0197  3024               	movlw	36
   2180     0198  0020               	movlb	0	; select bank0
   2181     0199  00C2               	movwf	_SW_STATE_Data
   2182     019A                     l2368:
   2183                           
-  2184                           ;main.c: 96:   SW_STATE_Data[1] = 0x08;
+  2184                           ;main.c: 95:   SW_STATE_Data[1] = 0x08;
   2185     019A  3008               	movlw	8
   2186     019B  00C3               	movwf	_SW_STATE_Data+1
   2187     019C                     l2370:
   2188                           
-  2189                           ;main.c: 97:   SW_STATE_Data[2] = 0x94;
+  2189                           ;main.c: 96:   SW_STATE_Data[2] = 0x94;
   2190     019C  3094               	movlw	148
   2191     019D  00C4               	movwf	_SW_STATE_Data+2
   2192     019E                     l2372:
   2193                           
-  2194                           ;main.c: 98:   SW_STATE_Data[3] = 0x00;
+  2194                           ;main.c: 97:   SW_STATE_Data[3] = 0x00;
   2195     019E  01C5               	clrf	_SW_STATE_Data+3
   2196     019F                     l2374:
   2197                           
-  2198                           ;main.c: 99:   SW_STATE_Data[4] = 0x2F;
+  2198                           ;main.c: 98:   SW_STATE_Data[4] = 0x2F;
   2199     019F  302F               	movlw	47
   2200     01A0  00C6               	movwf	_SW_STATE_Data+4
   2201     01A1                     l2376:
   2202                           
-  2203                           ;main.c: 100:   SW_STATE_Data[5] = 0x00;
+  2203                           ;main.c: 99:   SW_STATE_Data[5] = 0x00;
   2204     01A1  01C7               	clrf	_SW_STATE_Data+5
   2205     01A2                     l2378:
   2206                           
-  2207                           ;main.c: 101:   SW_STATE_Data[6] = 0xA3;
+  2207                           ;main.c: 100:   SW_STATE_Data[6] = 0xA3;
   2208     01A2  30A3               	movlw	163
   2209     01A3  00C8               	movwf	_SW_STATE_Data+6
   2210     01A4                     l2380:
   2211                           
-  2212                           ;main.c: 102:   SW_STATE_Data[7] = 0xBE;
+  2212                           ;main.c: 101:   SW_STATE_Data[7] = 0xBE;
   2213     01A4  30BE               	movlw	190
   2214     01A5  00C9               	movwf	_SW_STATE_Data+7
   2215     01A6                     l2382:
   2216                           
-  2217                           ;main.c: 106:     if (PORTAbits.RA0 == 0) {
-  2218     01A6  0020               	movlb	0	; select bank0
-  2219     01A7  180C               	btfsc	12,0	;volatile
-  2220     01A8  29AA               	goto	u1841
-  2221     01A9  29AB               	goto	u1840
-  2222     01AA                     u1841:
-  2223     01AA  29B0               	goto	l500
-  2224     01AB                     u1840:
-  2225     01AB                     l497:	
-  2226                           ;main.c: 107:       do { LATBbits.LATB5 = 1; } while(0);
-  2227                           
-  2228     01AB  0022               	movlb	2	; select bank2
-  2229     01AC  168D               	bsf	13,5	;volatile
-  2230     01AD                     l498:
+  2217                           ;main.c: 104:   {;main.c: 106:     LIN_handler();
+  2218     01A6  3182  228E  3181   	fcall	_LIN_handler
+  2219     01A9                     l2384:
+  2220                           
+  2221                           ;main.c: 109:     if (PORTAbits.RA0 == 0)
+  2222     01A9  0020               	movlb	0	; select bank0
+  2223     01AA  180C               	btfsc	12,0	;volatile
+  2224     01AB  29AD               	goto	u1841
+  2225     01AC  29AE               	goto	u1840
+  2226     01AD                     u1841:
+  2227     01AD  29B3               	goto	l500
+  2228     01AE                     u1840:
+  2229     01AE                     l497:	
+  2230                           ;main.c: 110:     {;main.c: 111:       do { LATBbits.LATB5 = 1; } while(0);
   2231                           
-  2232                           ;main.c: 108:       ((SW_STATE_Data[5]) |= (1 << (5)));
-  2233     01AD  0020               	movlb	0	; select bank0
-  2234     01AE  16C7               	bsf	_SW_STATE_Data+5,5
+  2232     01AE  0022               	movlb	2	; select bank2
+  2233     01AF  168D               	bsf	13,5	;volatile
+  2234     01B0                     l498:
   2235                           
-  2236                           ;main.c: 109:     } else {
-  2237     01AF  29B8               	goto	l2386
-  2238     01B0                     l500:	
-  2239                           ;main.c: 110:       do { LATBbits.LATB5 = 0; } while(0);
-  2240                           
-  2241     01B0  0022               	movlb	2	; select bank2
-  2242     01B1  128D               	bcf	13,5	;volatile
-  2243     01B2                     l2384:
+  2236                           ;main.c: 112:       ((SW_STATE_Data[5]) |= (1 << (5)));
+  2237     01B0  0020               	movlb	0	; select bank0
+  2238     01B1  16C7               	bsf	_SW_STATE_Data+5,5
+  2239                           
+  2240                           ;main.c: 113:     }
+  2241     01B2  29BB               	goto	l2388
+  2242     01B3                     l500:	
+  2243                           ;main.c: 115:     {;main.c: 116:       do { LATBbits.LATB5 = 0; } while(0);
   2244                           
-  2245                           ;main.c: 111:       ((SW_STATE_Data[5]) &= (~(1 << (5))));
-  2246     01B2  30DF               	movlw	223
-  2247     01B3  0021               	movlb	1	; select bank1
-  2248     01B4  00D1               	movwf	??_main^(0+128)
-  2249     01B5  0851               	movf	??_main^(0+128),w
-  2250     01B6  0020               	movlb	0	; select bank0
-  2251     01B7  05C7               	andwf	_SW_STATE_Data+5,f
-  2252     01B8                     l2386:
-  2253                           
-  2254                           ;main.c: 115:     if (PORTAbits.RA1 == 0) {
-  2255     01B8  188C               	btfsc	12,1	;volatile
-  2256     01B9  29BB               	goto	u1851
-  2257     01BA  29BC               	goto	u1850
-  2258     01BB                     u1851:
-  2259     01BB  29C1               	goto	l506
-  2260     01BC                     u1850:
-  2261     01BC                     l503:	
-  2262                           ;main.c: 116:       do { LATBbits.LATB4 = 1; } while(0);
-  2263                           
-  2264     01BC  0022               	movlb	2	; select bank2
-  2265     01BD  160D               	bsf	13,4	;volatile
-  2266     01BE                     l504:
+  2245     01B3  0022               	movlb	2	; select bank2
+  2246     01B4  128D               	bcf	13,5	;volatile
+  2247     01B5                     l2386:
+  2248                           
+  2249                           ;main.c: 117:       ((SW_STATE_Data[5]) &= (~(1 << (5))));
+  2250     01B5  30DF               	movlw	223
+  2251     01B6  0021               	movlb	1	; select bank1
+  2252     01B7  00D1               	movwf	??_main^(0+128)
+  2253     01B8  0851               	movf	??_main^(0+128),w
+  2254     01B9  0020               	movlb	0	; select bank0
+  2255     01BA  05C7               	andwf	_SW_STATE_Data+5,f
+  2256     01BB                     l2388:
+  2257                           
+  2258                           ;main.c: 121:     if (PORTAbits.RA1 == 0)
+  2259     01BB  188C               	btfsc	12,1	;volatile
+  2260     01BC  29BE               	goto	u1851
+  2261     01BD  29BF               	goto	u1850
+  2262     01BE                     u1851:
+  2263     01BE  29C4               	goto	l506
+  2264     01BF                     u1850:
+  2265     01BF                     l503:	
+  2266                           ;main.c: 122:     {;main.c: 123:       do { LATBbits.LATB4 = 1; } while(0);
   2267                           
-  2268                           ;main.c: 117:       ((SW_STATE_Data[2]) |= (1 << (0)));
-  2269     01BE  0020               	movlb	0	; select bank0
-  2270     01BF  1444               	bsf	_SW_STATE_Data+2,0
+  2268     01BF  0022               	movlb	2	; select bank2
+  2269     01C0  160D               	bsf	13,4	;volatile
+  2270     01C1                     l504:
   2271                           
-  2272                           ;main.c: 118:     } else {
-  2273     01C0  29C9               	goto	l2390
-  2274     01C1                     l506:	
-  2275                           ;main.c: 119:       do { LATBbits.LATB4 = 0; } while(0);
-  2276                           
-  2277     01C1  0022               	movlb	2	; select bank2
-  2278     01C2  120D               	bcf	13,4	;volatile
-  2279     01C3                     l2388:
+  2272                           ;main.c: 124:       ((SW_STATE_Data[2]) |= (1 << (0)));
+  2273     01C1  0020               	movlb	0	; select bank0
+  2274     01C2  1444               	bsf	_SW_STATE_Data+2,0
+  2275                           
+  2276                           ;main.c: 125:     }
+  2277     01C3  29CC               	goto	l2392
+  2278     01C4                     l506:	
+  2279                           ;main.c: 127:     {;main.c: 128:       do { LATBbits.LATB4 = 0; } while(0);
   2280                           
-  2281                           ;main.c: 120:       ((SW_STATE_Data[2]) &= (~(1 << (0))));
-  2282     01C3  30FE               	movlw	254
-  2283     01C4  0021               	movlb	1	; select bank1
-  2284     01C5  00D1               	movwf	??_main^(0+128)
-  2285     01C6  0851               	movf	??_main^(0+128),w
-  2286     01C7  0020               	movlb	0	; select bank0
-  2287     01C8  05C4               	andwf	_SW_STATE_Data+2,f
-  2288     01C9                     l2390:
-  2289                           
-  2290                           ;main.c: 124:     if (PORTAbits.RA2 == 0) {
-  2291     01C9  190C               	btfsc	12,2	;volatile
-  2292     01CA  29CC               	goto	u1861
-  2293     01CB  29CD               	goto	u1860
-  2294     01CC                     u1861:
-  2295     01CC  29D2               	goto	l512
-  2296     01CD                     u1860:
-  2297     01CD                     l509:	
-  2298                           ;main.c: 125:       do { LATBbits.LATB3 = 1; } while(0);
-  2299                           
-  2300     01CD  0022               	movlb	2	; select bank2
-  2301     01CE  158D               	bsf	13,3	;volatile
-  2302     01CF                     l510:
+  2281     01C4  0022               	movlb	2	; select bank2
+  2282     01C5  120D               	bcf	13,4	;volatile
+  2283     01C6                     l2390:
+  2284                           
+  2285                           ;main.c: 129:       ((SW_STATE_Data[2]) &= (~(1 << (0))));
+  2286     01C6  30FE               	movlw	254
+  2287     01C7  0021               	movlb	1	; select bank1
+  2288     01C8  00D1               	movwf	??_main^(0+128)
+  2289     01C9  0851               	movf	??_main^(0+128),w
+  2290     01CA  0020               	movlb	0	; select bank0
+  2291     01CB  05C4               	andwf	_SW_STATE_Data+2,f
+  2292     01CC                     l2392:
+  2293                           
+  2294                           ;main.c: 133:     if (PORTAbits.RA2 == 0)
+  2295     01CC  190C               	btfsc	12,2	;volatile
+  2296     01CD  29CF               	goto	u1861
+  2297     01CE  29D0               	goto	u1860
+  2298     01CF                     u1861:
+  2299     01CF  29D5               	goto	l512
+  2300     01D0                     u1860:
+  2301     01D0                     l509:	
+  2302                           ;main.c: 134:     {;main.c: 135:       do { LATBbits.LATB3 = 1; } while(0);
   2303                           
-  2304                           ;main.c: 126:       ((SW_STATE_Data[1]) |= (1 << (3)));
-  2305     01CF  0020               	movlb	0	; select bank0
-  2306     01D0  15C3               	bsf	_SW_STATE_Data+1,3
+  2304     01D0  0022               	movlb	2	; select bank2
+  2305     01D1  158D               	bsf	13,3	;volatile
+  2306     01D2                     l510:
   2307                           
-  2308                           ;main.c: 127:     } else {
-  2309     01D1  29DA               	goto	l2394
-  2310     01D2                     l512:	
-  2311                           ;main.c: 128:       do { LATBbits.LATB3 = 0; } while(0);
-  2312                           
-  2313     01D2  0022               	movlb	2	; select bank2
-  2314     01D3  118D               	bcf	13,3	;volatile
-  2315     01D4                     l2392:
+  2308                           ;main.c: 136:       ((SW_STATE_Data[1]) |= (1 << (3)));
+  2309     01D2  0020               	movlb	0	; select bank0
+  2310     01D3  15C3               	bsf	_SW_STATE_Data+1,3
+  2311                           
+  2312                           ;main.c: 137:     }
+  2313     01D4  29DD               	goto	l2396
+  2314     01D5                     l512:	
+  2315                           ;main.c: 139:     {;main.c: 140:       do { LATBbits.LATB3 = 0; } while(0);
   2316                           
-  2317                           ;main.c: 129:       ((SW_STATE_Data[1]) &= (~(1 << (3))));
-  2318     01D4  30F7               	movlw	247
-  2319     01D5  0021               	movlb	1	; select bank1
-  2320     01D6  00D1               	movwf	??_main^(0+128)
-  2321     01D7  0851               	movf	??_main^(0+128),w
-  2322     01D8  0020               	movlb	0	; select bank0
-  2323     01D9  05C3               	andwf	_SW_STATE_Data+1,f
-  2324     01DA                     l2394:
-  2325                           
-  2326                           ;main.c: 133:     if (PORTAbits.RA3 == 0) {
-  2327     01DA  198C               	btfsc	12,3	;volatile
-  2328     01DB  29DD               	goto	u1871
-  2329     01DC  29DE               	goto	u1870
-  2330     01DD                     u1871:
-  2331     01DD  29E3               	goto	l518
-  2332     01DE                     u1870:
-  2333     01DE                     l515:	
-  2334                           ;main.c: 134:       do { LATBbits.LATB2 = 1; } while(0);
-  2335                           
-  2336     01DE  0022               	movlb	2	; select bank2
-  2337     01DF  150D               	bsf	13,2	;volatile
-  2338     01E0                     l516:
+  2317     01D5  0022               	movlb	2	; select bank2
+  2318     01D6  118D               	bcf	13,3	;volatile
+  2319     01D7                     l2394:
+  2320                           
+  2321                           ;main.c: 141:       ((SW_STATE_Data[1]) &= (~(1 << (3))));
+  2322     01D7  30F7               	movlw	247
+  2323     01D8  0021               	movlb	1	; select bank1
+  2324     01D9  00D1               	movwf	??_main^(0+128)
+  2325     01DA  0851               	movf	??_main^(0+128),w
+  2326     01DB  0020               	movlb	0	; select bank0
+  2327     01DC  05C3               	andwf	_SW_STATE_Data+1,f
+  2328     01DD                     l2396:
+  2329                           
+  2330                           ;main.c: 145:     if (PORTAbits.RA3 == 0)
+  2331     01DD  198C               	btfsc	12,3	;volatile
+  2332     01DE  29E0               	goto	u1871
+  2333     01DF  29E1               	goto	u1870
+  2334     01E0                     u1871:
+  2335     01E0  29E6               	goto	l518
+  2336     01E1                     u1870:
+  2337     01E1                     l515:	
+  2338                           ;main.c: 146:     {;main.c: 147:       do { LATBbits.LATB2 = 1; } while(0);
   2339                           
-  2340                           ;main.c: 135:       ((SW_STATE_Data[1]) |= (1 << (6)));
-  2341     01E0  0020               	movlb	0	; select bank0
-  2342     01E1  1743               	bsf	_SW_STATE_Data+1,6
+  2340     01E1  0022               	movlb	2	; select bank2
+  2341     01E2  150D               	bsf	13,2	;volatile
+  2342     01E3                     l516:
   2343                           
-  2344                           ;main.c: 137:     } else {
-  2345     01E2  29EB               	goto	l2398
-  2346     01E3                     l518:	
-  2347                           ;main.c: 138:       do { LATBbits.LATB2 = 0; } while(0);
-  2348                           
-  2349     01E3  0022               	movlb	2	; select bank2
-  2350     01E4  110D               	bcf	13,2	;volatile
-  2351     01E5                     l2396:
+  2344                           ;main.c: 148:       ((SW_STATE_Data[1]) |= (1 << (6)));
+  2345     01E3  0020               	movlb	0	; select bank0
+  2346     01E4  1743               	bsf	_SW_STATE_Data+1,6
+  2347                           
+  2348                           ;main.c: 150:     }
+  2349     01E5  29EE               	goto	l2400
+  2350     01E6                     l518:	
+  2351                           ;main.c: 152:     {;main.c: 153:       do { LATBbits.LATB2 = 0; } while(0);
   2352                           
-  2353                           ;main.c: 139:       ((SW_STATE_Data[1]) &= (~(1 << (6))));
-  2354     01E5  30BF               	movlw	191
-  2355     01E6  0021               	movlb	1	; select bank1
-  2356     01E7  00D1               	movwf	??_main^(0+128)
-  2357     01E8  0851               	movf	??_main^(0+128),w
-  2358     01E9  0020               	movlb	0	; select bank0
-  2359     01EA  05C3               	andwf	_SW_STATE_Data+1,f
-  2360     01EB                     l2398:
-  2361                           
-  2362                           ;main.c: 143:     if (PORTAbits.RA4 == 0) {
-  2363     01EB  1A0C               	btfsc	12,4	;volatile
-  2364     01EC  29EE               	goto	u1881
-  2365     01ED  29EF               	goto	u1880
-  2366     01EE                     u1881:
-  2367     01EE  29F4               	goto	l524
-  2368     01EF                     u1880:
-  2369     01EF                     l521:	
-  2370                           ;main.c: 144:       do { LATBbits.LATB1 = 1; } while(0);
-  2371                           
-  2372     01EF  0022               	movlb	2	; select bank2
-  2373     01F0  148D               	bsf	13,1	;volatile
-  2374     01F1                     l522:
+  2353     01E6  0022               	movlb	2	; select bank2
+  2354     01E7  110D               	bcf	13,2	;volatile
+  2355     01E8                     l2398:
+  2356                           
+  2357                           ;main.c: 154:       ((SW_STATE_Data[1]) &= (~(1 << (6))));
+  2358     01E8  30BF               	movlw	191
+  2359     01E9  0021               	movlb	1	; select bank1
+  2360     01EA  00D1               	movwf	??_main^(0+128)
+  2361     01EB  0851               	movf	??_main^(0+128),w
+  2362     01EC  0020               	movlb	0	; select bank0
+  2363     01ED  05C3               	andwf	_SW_STATE_Data+1,f
+  2364     01EE                     l2400:
+  2365                           
+  2366                           ;main.c: 159:     if (PORTAbits.RA4 == 0)
+  2367     01EE  1A0C               	btfsc	12,4	;volatile
+  2368     01EF  29F1               	goto	u1881
+  2369     01F0  29F2               	goto	u1880
+  2370     01F1                     u1881:
+  2371     01F1  29F7               	goto	l524
+  2372     01F2                     u1880:
+  2373     01F2                     l521:	
+  2374                           ;main.c: 160:    {;main.c: 161:       do { LATBbits.LATB1 = 1; } while(0);
   2375                           
-  2376                           ;main.c: 145:       ((SW_STATE_Data[1]) |= (1 << (4)));
-  2377     01F1  0020               	movlb	0	; select bank0
-  2378     01F2  1643               	bsf	_SW_STATE_Data+1,4
+  2376     01F2  0022               	movlb	2	; select bank2
+  2377     01F3  148D               	bsf	13,1	;volatile
+  2378     01F4                     l522:
   2379                           
-  2380                           ;main.c: 146:     } else {
-  2381     01F3  29FC               	goto	l2402
-  2382     01F4                     l524:	
-  2383                           ;main.c: 147:       do { LATBbits.LATB1 = 0; } while(0);
-  2384                           
-  2385     01F4  0022               	movlb	2	; select bank2
-  2386     01F5  108D               	bcf	13,1	;volatile
-  2387     01F6                     l2400:
+  2380                           ;main.c: 162:       ((SW_STATE_Data[1]) |= (1 << (4)));
+  2381     01F4  0020               	movlb	0	; select bank0
+  2382     01F5  1643               	bsf	_SW_STATE_Data+1,4
+  2383                           
+  2384                           ;main.c: 164:     }
+  2385     01F6  29FF               	goto	l2404
+  2386     01F7                     l524:	
+  2387                           ;main.c: 166:     {;main.c: 167:       do { LATBbits.LATB1 = 0; } while(0);
   2388                           
-  2389                           ;main.c: 148:       ((SW_STATE_Data[1]) &= (~(1 << (4))));
-  2390     01F6  30EF               	movlw	239
-  2391     01F7  0021               	movlb	1	; select bank1
-  2392     01F8  00D1               	movwf	??_main^(0+128)
-  2393     01F9  0851               	movf	??_main^(0+128),w
-  2394     01FA  0020               	movlb	0	; select bank0
-  2395     01FB  05C3               	andwf	_SW_STATE_Data+1,f
-  2396     01FC                     l2402:
-  2397                           
-  2398                           ;main.c: 152:     if (PORTCbits.RC3 == 0) {
-  2399     01FC  198E               	btfsc	14,3	;volatile
-  2400     01FD  29FF               	goto	u1891
-  2401     01FE  2A00               	goto	u1890
-  2402     01FF                     u1891:
-  2403     01FF  2A05               	goto	l530
-  2404     0200                     u1890:
-  2405     0200                     l527:	
-  2406                           ;main.c: 153:       do { LATBbits.LATB0 = 1; } while(0);
-  2407                           
-  2408     0200  0022               	movlb	2	; select bank2
-  2409     0201  140D               	bsf	13,0	;volatile
-  2410     0202                     l528:
+  2389     01F7  0022               	movlb	2	; select bank2
+  2390     01F8  108D               	bcf	13,1	;volatile
+  2391     01F9                     l2402:
+  2392                           
+  2393                           ;main.c: 168:       ((SW_STATE_Data[1]) &= (~(1 << (4))));
+  2394     01F9  30EF               	movlw	239
+  2395     01FA  0021               	movlb	1	; select bank1
+  2396     01FB  00D1               	movwf	??_main^(0+128)
+  2397     01FC  0851               	movf	??_main^(0+128),w
+  2398     01FD  0020               	movlb	0	; select bank0
+  2399     01FE  05C3               	andwf	_SW_STATE_Data+1,f
+  2400     01FF                     l2404:
+  2401                           
+  2402                           ;main.c: 173:     if (PORTCbits.RC3 == 0)
+  2403     01FF  198E               	btfsc	14,3	;volatile
+  2404     0200  2A02               	goto	u1891
+  2405     0201  2A03               	goto	u1890
+  2406     0202                     u1891:
+  2407     0202  2A08               	goto	l530
+  2408     0203                     u1890:
+  2409     0203                     l527:	
+  2410                           ;main.c: 174:    {;main.c: 175:       do { LATBbits.LATB0 = 1; } while(0);
   2411                           
-  2412                           ;main.c: 154:       ((SW_STATE_Data[1]) |= (1 << (5)));
-  2413     0202  0020               	movlb	0	; select bank0
-  2414     0203  16C3               	bsf	_SW_STATE_Data+1,5
+  2412     0203  0022               	movlb	2	; select bank2
+  2413     0204  140D               	bsf	13,0	;volatile
+  2414     0205                     l528:
   2415                           
-  2416                           ;main.c: 155:     } else {
-  2417     0204  2A0D               	goto	l2406
-  2418     0205                     l530:	
-  2419                           ;main.c: 156:       do { LATBbits.LATB0 = 0; } while(0);
-  2420                           
-  2421     0205  0022               	movlb	2	; select bank2
-  2422     0206  100D               	bcf	13,0	;volatile
-  2423     0207                     l2404:
+  2416                           ;main.c: 177:       ((SW_STATE_Data[1]) |= (1 << (5)));
+  2417     0205  0020               	movlb	0	; select bank0
+  2418     0206  16C3               	bsf	_SW_STATE_Data+1,5
+  2419                           
+  2420                           ;main.c: 178:     }
+  2421     0207  29A6               	goto	l2382
+  2422     0208                     l530:	
+  2423                           ;main.c: 180:     {;main.c: 181:       do { LATBbits.LATB0 = 0; } while(0);
   2424                           
-  2425                           ;main.c: 157:       ((SW_STATE_Data[1]) &= (~(1 << (5))));
-  2426     0207  30DF               	movlw	223
-  2427     0208  0021               	movlb	1	; select bank1
-  2428     0209  00D1               	movwf	??_main^(0+128)
-  2429     020A  0851               	movf	??_main^(0+128),w
-  2430     020B  0020               	movlb	0	; select bank0
-  2431     020C  05C3               	andwf	_SW_STATE_Data+1,f
-  2432     020D                     l2406:
-  2433                           
-  2434                           ;main.c: 161:     LIN_handler();
-  2435     020D  3182  228E  3181   	fcall	_LIN_handler
+  2425     0208  0022               	movlb	2	; select bank2
+  2426     0209  100D               	bcf	13,0	;volatile
+  2427     020A                     l2406:
+  2428                           
+  2429                           ;main.c: 183:       ((SW_STATE_Data[1]) &= (~(1 << (5))));
+  2430     020A  30DF               	movlw	223
+  2431     020B  0021               	movlb	1	; select bank1
+  2432     020C  00D1               	movwf	??_main^(0+128)
+  2433     020D  0851               	movf	??_main^(0+128),w
+  2434     020E  0020               	movlb	0	; select bank0
+  2435     020F  05C3               	andwf	_SW_STATE_Data+1,f
   2436     0210  29A6               	goto	l2382
   2437     0211  3180  2838         	ljmp	start
   2438     0213                     __end_of_main:
@@ -7162,7 +7162,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   7065                           ;	Watchdog Timer Enable
   7066                           ;	WDTE = OFF, WDT disabled
   7067                           ;	Power-up Timer Enable
-  7068                           ;	PWRTE = ON, PWRT enabled
+  7068                           ;	PWRTE = OFF, PWRT disabled
   7069                           ;	MCLR Pin Function Select
   7070                           ;	MCLRE = ON, MCLR/VPP pin function is MCLR
   7071                           ;	Flash Program Memory Code Protection
@@ -7179,7 +7179,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   7081                           ;	Fail-Safe Clock Monitor Enable
   7082                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
   7083     8007                     	org	32775
-  7084     8007  3FC4               	dw	16324
+  7084     8007  3FE4               	dw	16356
   7085                           
   7086                           ;Config register CONFIG2 @ 0x8008
   7087                           ;	Flash Memory Self-Write Protection
@@ -7767,7 +7767,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.46 build 20240104201356 
-Symbol Table                                                                                   Thu Jul 10 13:47:41 2025
+Symbol Table                                                                                   Fri Jul 11 16:35:26 2025
 
                 ?_EUSART_SetRxInterruptHandler 0053                          __end_of_LIN_getPacket 0557  
                         ??_LIN_setTimerHandler 0055                          __end_of_LIN_disableRx 06AF  
@@ -7780,26 +7780,26 @@ Symbol Table                                                                    
                                           l136 0645                                            l152 06BA  
                                           l161 06AE                                            l146 0666  
                                           l331 069F                                            l164 06C9  
-                                          l500 01B0                                            l325 0699  
+                                          l500 01B3                                            l325 0699  
                                           l149 06B6                                            l158 06A9  
-                                          l334 0687                                            l510 01CF  
-                                          l503 01BC                                            l328 0693  
-                                          l432 064C                                            l512 01D2  
-                                          l504 01BE                                            l193 065D  
-                                          l337 068D                                            l521 01EF  
+                                          l334 0687                                            l510 01D2  
+                                          l503 01BF                                            l328 0693  
+                                          l432 064C                                            l512 01D5  
+                                          l504 01C1                                            l193 065D  
+                                          l337 068D                                            l521 01F2  
                                           l274 066F                                            l186 0638  
-                                          l530 0205                                            l522 01F1  
-                                          l506 01C1                                            l435 0651  
-                                          l515 01DE                                            l292 045A  
-                                          l268 0349                                            l524 01F4  
-                                          l516 01E0                                            l293 0464  
+                                          l530 0208                                            l522 01F4  
+                                          l506 01C4                                            l435 0651  
+                                          l515 01E1                                            l292 045A  
+                                          l268 0349                                            l524 01F7  
+                                          l516 01E3                                            l293 0464  
                                           l461 06A4                                            l429 061A  
-                                          l509 01CD                                            l438 06B2  
-                                          l518 01E3                                            l287 04A2  
+                                          l509 01D0                                            l438 06B2  
+                                          l518 01E6                                            l287 04A2  
                                           l471 0681                                            l455 0607  
-                                          l527 0200                                            l296 047B  
-                                          l368 05AA                                            l528 0202  
-                                          l497 01AB                                            l498 01AD  
+                                          l527 0203                                            l296 047B  
+                                          l368 05AA                                            l528 0205  
+                                          l497 01AE                                            l498 01B0  
                        ??_EUSART_RxDataHandler 0070                 ?_EUSART_SetFramingErrorHandler 0053  
                                           wreg 0009                          __end_of_scheduleTable 0676  
                                  ?_EUSART_Read 0070                                           l2000 03B2  
@@ -7826,20 +7826,20 @@ Symbol Table                                                                    
                                          l2312 028F                                           l2080 0340  
                                          l2072 0326                                           l2064 031E  
                                          l2056 0307                                           l2048 062B  
-                                         l2128 05FF                                           l2400 01F6  
+                                         l2128 05FF                                           l2400 01EE  
                                          l2330 02BA                                           l2322 02A4  
                                          l2314 0295                                           l2082 0341  
                                          l2074 032E                                           l2066 0320  
-                                         l2058 0309                                           l2402 01FC  
+                                         l2058 0309                                           l2402 01F9  
                                          l2340 02D8                                           l2332 02BD  
                                          l2324 02A9                                           l2316 0296  
                                          l2084 0342                                           l2076 0336  
                                          l2068 0322                                           l2092 0591  
-                                         l2404 0207                                           l2342 02E0  
+                                         l2404 01FF                                           l2342 02E0  
                                          l2334 02C3                                           l2326 02AF  
                                          l2318 0299                                           l2086 0347  
                                          l2078 033E                                           l2094 0596  
-                                         l2406 020D                                           l2344 02E3  
+                                         l2406 020A                                           l2344 02E3  
                                          l2336 02C4                                           l2328 02B3  
                                          l2352 02EE                                           l2096 0599  
                                          l2360 0192                                           l2346 02E7  
@@ -7849,26 +7849,26 @@ Symbol Table                                                                    
                                          l2372 019E                                           l2364 0196  
                                          l1902 049E                                           l1910 0455  
                                          l1830 0578                                           l2438 02F8  
-                                         l2390 01C9                                           l2382 01A6  
+                                         l2390 01C6                                           l2382 01A6  
                                          l2374 019F                                           l2366 0197  
                                          l1904 04A0                                           l1920 0470  
                                          l1912 0455                                           l1840 04D1  
                                          l1832 057B                                           l1752 067C  
-                                         l2392 01D4                                           l2384 01B2  
+                                         l2392 01CC                                           l2384 01A9  
                                          l2376 01A1                                           l2368 019A  
                                          l1922 0476                                           l1914 045F  
                                          l1842 04D6                                           l1834 0580  
-                                         l1930 053E                                           l2394 01DA  
-                                         l2386 01B8                                           l2378 01A2  
+                                         l1930 053E                                           l2394 01D7  
+                                         l2386 01B5                                           l2378 01A2  
                                          l1924 0477                                           l1916 0465  
                                          l1908 06C7                                           l1844 04DA  
                                          l1836 0584                                           l1932 0548  
-                                         l1860 05E0                                           l2396 01E5  
-                                         l2388 01C3                                           l1870 03F7  
+                                         l1860 05E0                                           l2396 01DD  
+                                         l2388 01BB                                           l1870 03F7  
                                          l1918 046C                                           l1926 0479  
                                          l1838 04CC                                           l1934 0554  
                                          l1790 06B3                                           l1862 05EA  
-                                         l2398 01EB                                           l1872 0401  
+                                         l2398 01E8                                           l1872 0401  
                                          l1880 0416                                           l1928 0539  
                                          l1960 0682                                           l1792 065E  
                                          l1864 05F0                                           l1890 0482  
@@ -7907,16 +7907,16 @@ Symbol Table                                                                    
                                          u1801 02AE                                           u1810 02C3  
                                          u1811 02C2                                           u1820 02D8  
                                          u1821 02D7                                           u1830 02E0  
-                                         u1831 02DF                                           u1840 01AB  
-                                         u1841 01AA                                           u1770 0295  
-                                         u1850 01BC                                           u1771 0294  
-                                         u1851 01BB                                           u1780 02A4  
-                                         u1860 01CD                                           u1781 02A3  
-                                         u1861 01CC                                           u1790 02A9  
-                                         u1870 01DE                                           u1791 02A8  
-                                         u1871 01DD                                           u1880 01EF  
-                                         u1881 01EE                                           u1890 0200  
-                                         u1891 01FF                                           i1l81 00D2  
+                                         u1831 02DF                                           u1840 01AE  
+                                         u1841 01AD                                           u1770 0295  
+                                         u1850 01BF                                           u1771 0294  
+                                         u1851 01BE                                           u1780 02A4  
+                                         u1860 01D0                                           u1781 02A3  
+                                         u1861 01CF                                           u1790 02A9  
+                                         u1870 01E1                                           u1791 02A8  
+                                         u1871 01E0                                           u1880 01F2  
+                                         u1881 01F1                                           u1890 0203  
+                                         u1891 0202                                           i1l81 00D2  
                                          i1l84 010B                                           _PLLR 04D6  
                                          _TMR0 0015                                           _WPUB 020D  
                                          _WPUE 0210                                 _LIN_sendPacket 0384  

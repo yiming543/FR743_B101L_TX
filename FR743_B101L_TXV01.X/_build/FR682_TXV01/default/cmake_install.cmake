@@ -1,4 +1,4 @@
-# Install script for directory: D:/yiming/work/FR743_B101L_TXV01.X/cmake/FR682_TXV01/default
+# Install script for directory: D:/yiming/work/FR682_TXV01.X/cmake/FR682_TXV01/default
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,7 +40,7 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/yiming/work/FR743_B101L_TXV01.X/_build/FR682_TXV01/default/install_local_manifest.txt"
+  file(WRITE "D:/yiming/work/FR682_TXV01.X/_build/FR682_TXV01/default/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -56,6 +56,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/yiming/work/FR743_B101L_TXV01.X/_build/FR682_TXV01/default/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "D:/yiming/work/FR682_TXV01.X/_build/FR682_TXV01/default/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

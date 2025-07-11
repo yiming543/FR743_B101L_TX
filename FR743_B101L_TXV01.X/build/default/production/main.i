@@ -7,7 +7,7 @@
 # 1 "C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 55 "main.c"
+# 54 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
@@ -5345,7 +5345,7 @@ uint8_t SW_STATE_Data[8];
 
 const lin_cmd_packet_t scheduleTable[] = {
 
-    {SW_STATE, TRANSMIT, 8, 20, 40, SW_STATE_Data }
+    {SW_STATE, TRANSMIT, 8, 20, 30, SW_STATE_Data }
 };
 
 
@@ -5359,9 +5359,10 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 98 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 55 "main.c" 2
-# 76 "main.c"
-int main(void) {
+# 54 "main.c" 2
+# 74 "main.c"
+int main(void)
+{
 
   SYSTEM_Initialize();
 
@@ -5389,63 +5390,87 @@ int main(void) {
   SW_STATE_Data[6] = 0xA3;
   SW_STATE_Data[7] = 0xBE;
 
-  while (1) {
+  while (1)
+  {
 
-    if (PORTAbits.RA0 == 0) {
+    LIN_handler();
+
+
+    if (PORTAbits.RA0 == 0)
+    {
       do { LATBbits.LATB5 = 1; } while(0);
       ((SW_STATE_Data[5]) |= (1 << (5)));
-    } else {
+    }
+    else
+    {
       do { LATBbits.LATB5 = 0; } while(0);
       ((SW_STATE_Data[5]) &= (~(1 << (5))));
     }
 
 
-    if (PORTAbits.RA1 == 0) {
+    if (PORTAbits.RA1 == 0)
+    {
       do { LATBbits.LATB4 = 1; } while(0);
       ((SW_STATE_Data[2]) |= (1 << (0)));
-    } else {
+    }
+    else
+    {
       do { LATBbits.LATB4 = 0; } while(0);
       ((SW_STATE_Data[2]) &= (~(1 << (0))));
     }
 
 
-    if (PORTAbits.RA2 == 0) {
+    if (PORTAbits.RA2 == 0)
+    {
       do { LATBbits.LATB3 = 1; } while(0);
       ((SW_STATE_Data[1]) |= (1 << (3)));
-    } else {
+    }
+    else
+    {
       do { LATBbits.LATB3 = 0; } while(0);
       ((SW_STATE_Data[1]) &= (~(1 << (3))));
     }
 
 
-    if (PORTAbits.RA3 == 0) {
+    if (PORTAbits.RA3 == 0)
+    {
       do { LATBbits.LATB2 = 1; } while(0);
       ((SW_STATE_Data[1]) |= (1 << (6)));
 
-    } else {
+    }
+    else
+    {
       do { LATBbits.LATB2 = 0; } while(0);
       ((SW_STATE_Data[1]) &= (~(1 << (6))));
+
     }
 
 
-    if (PORTAbits.RA4 == 0) {
+    if (PORTAbits.RA4 == 0)
+   {
       do { LATBbits.LATB1 = 1; } while(0);
       ((SW_STATE_Data[1]) |= (1 << (4)));
-    } else {
+
+    }
+    else
+    {
       do { LATBbits.LATB1 = 0; } while(0);
       ((SW_STATE_Data[1]) &= (~(1 << (4))));
+
     }
 
 
-    if (PORTCbits.RC3 == 0) {
+    if (PORTCbits.RC3 == 0)
+   {
       do { LATBbits.LATB0 = 1; } while(0);
+
       ((SW_STATE_Data[1]) |= (1 << (5)));
-    } else {
+    }
+    else
+    {
       do { LATBbits.LATB0 = 0; } while(0);
+
       ((SW_STATE_Data[1]) &= (~(1 << (5))));
     }
-
-
-    LIN_handler();
   }
 }

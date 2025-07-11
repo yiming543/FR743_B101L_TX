@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\t00904\.mplab\app-finder\apps\cmake\v4.0.3\cmake-4.0.3-windows-x86_64\bin\cmake.exe --regenerate-during-build -SD:\yiming\work\FR743_B101L_TXV01.X\cmake\FR682_TXV01\default -BD:\yiming\work\FR743_B101L_TXV01.X\_build\FR682_TXV01\default
+  command = C:\Users\t00904\.mplab\app-finder\apps\cmake\v4.0.3\cmake-4.0.3-windows-x86_64\bin\cmake.exe --regenerate-during-build -SD:\yiming\work\FR682_TXV01.X\cmake\FR682_TXV01\default -BD:\yiming\work\FR682_TXV01.X\_build\FR682_TXV01\default
   description = Re-running CMake...
   generator = 1
 
