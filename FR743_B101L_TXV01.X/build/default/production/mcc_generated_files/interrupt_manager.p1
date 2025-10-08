@@ -568,8 +568,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3349 0 `uc
 . `E3272 0
 -> -> 8 `i `uc
+-> -> 15 `i `uc
 -> -> 20 `i `uc
--> -> 30 `i `uc
 &U _SW_STATE_Data
 ..
 ..

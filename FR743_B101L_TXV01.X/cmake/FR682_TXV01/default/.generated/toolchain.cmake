@@ -21,12 +21,10 @@ set(MP_AR_DIR "c:/Program Files/Microchip/xc8/v2.46/bin" CACHE PATH "Legacy vari
 
 set(CMAKE_AR "c:/Program Files/Microchip/xc8/v2.46/bin/xc8-ar.exe" CACHE FILEPATH "Path to the archiver binary.")
 
-set(CMAKE_RANLIB  CACHE FILEPATH "Do not run ranlib")
 
+set(CMAKE_RANLIB "" CACHE FILEPATH "Do not run ranlib")
 set(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> <LINK_FLAGS> <TARGET> <OBJECTS>")
-
-set(CMAKE_RANLIB  CACHE FILEPATH "Do not run ranlib")
-
+set(CMAKE_ASM_CREATE_STATIC_LIBRARY "<CMAKE_AR> <LINK_FLAGS> <TARGET> <OBJECTS>")
 # Extend the object path max if the OS is capable and it looks like the toolchain supports it
 # See https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation
 if(WIN32 AND NOT COMPILER_IS_LONG_PATH_AWARE)

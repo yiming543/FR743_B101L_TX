@@ -21,7 +21,6 @@ function(FR682_TXV01_default_default_XC8_assemble_rule target)
         "-Wl,--data-init"
         "-mno-keep-startup"
         "-mno-osccal"
-        "-moscval=0x3400"
         "-mno-resetbits"
         "-mno-save-resetbits"
         "-mno-download"
@@ -29,12 +28,13 @@ function(FR682_TXV01_default_default_XC8_assemble_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto")
+        "-mstack=compiled:auto:auto")
     list(REMOVE_ITEM options "")
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
         PRIVATE "__16F1936__"
         PRIVATE "__DEBUG=1"
+        PRIVATE "__MPLAB_DEBUGGER_PK4=1"
         PRIVATE "XPRJ_default=default")
     target_include_directories(${target} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
 endfunction()
@@ -58,7 +58,6 @@ function(FR682_TXV01_default_default_XC8_assemblePreprocess_rule target)
         "-Wl,--data-init"
         "-mno-keep-startup"
         "-mno-osccal"
-        "-moscval=0x3400"
         "-mno-resetbits"
         "-mno-save-resetbits"
         "-mno-download"
@@ -66,12 +65,13 @@ function(FR682_TXV01_default_default_XC8_assemblePreprocess_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto")
+        "-mstack=compiled:auto:auto")
     list(REMOVE_ITEM options "")
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
         PRIVATE "__16F1936__"
         PRIVATE "__DEBUG=1"
+        PRIVATE "__MPLAB_DEBUGGER_PK4=1"
         PRIVATE "XPRJ_default=default")
     target_include_directories(${target} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
 endfunction()
@@ -94,7 +94,6 @@ function(FR682_TXV01_default_default_XC8_compile_rule target)
         "-Wl,--data-init"
         "-mno-keep-startup"
         "-mno-osccal"
-        "-moscval=0x3400"
         "-mno-resetbits"
         "-mno-save-resetbits"
         "-mno-download"
@@ -102,12 +101,13 @@ function(FR682_TXV01_default_default_XC8_compile_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto")
+        "-mstack=compiled:auto:auto")
     list(REMOVE_ITEM options "")
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
         PRIVATE "__16F1936__"
         PRIVATE "__DEBUG=1"
+        PRIVATE "__MPLAB_DEBUGGER_PK4=1"
         PRIVATE "XPRJ_default=default")
     target_include_directories(${target} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
 endfunction()
@@ -131,7 +131,6 @@ function(FR682_TXV01_default_link_rule target)
         "-Wl,--data-init"
         "-mno-keep-startup"
         "-mno-osccal"
-        "-moscval=0x3400"
         "-mno-resetbits"
         "-mno-save-resetbits"
         "-mno-download"
@@ -139,8 +138,9 @@ function(FR682_TXV01_default_link_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto"
+        "-mstack=compiled:auto:auto"
         "-mrom=default"
+        "-mram=default,320-32f"
         "-Wl,--memorysummary,memoryfile.xml")
     list(REMOVE_ITEM options "")
     target_link_options(${target} PRIVATE "${options}")

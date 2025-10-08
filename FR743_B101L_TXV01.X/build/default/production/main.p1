@@ -30,8 +30,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:/Users/t00904/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1936.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"106 main.c
-[; ;main.c: 106:     LIN_handler();
+"215 main.c
+[; ;main.c: 215:     LIN_handler();
 [c E3266 0 1 2 3 .. ]
 [n E3266 . LIN_IDLE LIN_TX_IP LIN_RX_IP LIN_RX_RDY  ]
 "114 ./mcc_generated_files/LINDrivers/lin_master.h
@@ -577,310 +577,364 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3349 0 `uc
 . `E3272 0
 -> -> 8 `i `uc
+-> -> 15 `i `uc
 -> -> 20 `i `uc
--> -> 30 `i `uc
 &U _SW_STATE_Data
 ..
 ..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"74 main.c
-[; ;main.c: 74: int main(void)
+"185 main.c
+[; ;main.c: 185: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
-"75
-[; ;main.c: 75: {
 {
 [e :U _main ]
 [f ]
-"77
-[; ;main.c: 77:   SYSTEM_Initialize();
+"187
+[; ;main.c: 187:   SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"83
-[; ;main.c: 83:   (INTCONbits.GIE = 1);
+"193
+[; ;main.c: 193:   (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"86
-[; ;main.c: 86:   (INTCONbits.PEIE = 1);
+"196
+[; ;main.c: 196:   (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"94
-[; ;main.c: 94:   SW_STATE_Data[0] = 0x24;
+"204
+[; ;main.c: 204:   SW_STATE_Data[0] = 0x24;
 [e = *U + &U _SW_STATE_Data * -> -> -> 0 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 36 `i `uc ]
-"95
-[; ;main.c: 95:   SW_STATE_Data[1] = 0x08;
-[e = *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 8 `i `uc ]
-"96
-[; ;main.c: 96:   SW_STATE_Data[2] = 0x94;
-[e = *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 148 `i `uc ]
-"97
-[; ;main.c: 97:   SW_STATE_Data[3] = 0x00;
+"205
+[; ;main.c: 205:   SW_STATE_Data[1] = 0x00;
+[e = *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 0 `i `uc ]
+"206
+[; ;main.c: 206:   SW_STATE_Data[2] = 0x00;
+[e = *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 0 `i `uc ]
+"207
+[; ;main.c: 207:   SW_STATE_Data[3] = 0x00;
 [e = *U + &U _SW_STATE_Data * -> -> -> 3 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:   SW_STATE_Data[4] = 0x2F;
-[e = *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 47 `i `uc ]
-"99
-[; ;main.c: 99:   SW_STATE_Data[5] = 0x00;
+"208
+[; ;main.c: 208:   SW_STATE_Data[4] = 0x00;
+[e = *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 0 `i `uc ]
+"209
+[; ;main.c: 209:   SW_STATE_Data[5] = 0x00;
 [e = *U + &U _SW_STATE_Data * -> -> -> 5 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 0 `i `uc ]
-"100
-[; ;main.c: 100:   SW_STATE_Data[6] = 0xA3;
-[e = *U + &U _SW_STATE_Data * -> -> -> 6 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 163 `i `uc ]
-"101
-[; ;main.c: 101:   SW_STATE_Data[7] = 0xBE;
-[e = *U + &U _SW_STATE_Data * -> -> -> 7 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 190 `i `uc ]
-"103
-[; ;main.c: 103:   while (1)
+"210
+[; ;main.c: 210:   SW_STATE_Data[6] = 0x00;
+[e = *U + &U _SW_STATE_Data * -> -> -> 6 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 0 `i `uc ]
+"211
+[; ;main.c: 211:   SW_STATE_Data[7] = 0x00;
+[e = *U + &U _SW_STATE_Data * -> -> -> 7 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 0 `i `uc ]
+"213
+[; ;main.c: 213:   while (1) {
 [e :U 368 ]
-"104
-[; ;main.c: 104:   {
 {
-"106
-[; ;main.c: 106:     LIN_handler();
+"215
+[; ;main.c: 215:     LIN_handler();
 [e ( _LIN_handler ..  ]
-"109
-[; ;main.c: 109:     if (PORTAbits.RA0 == 0)
+"218
+[; ;main.c: 218:     if ((PORTAbits.RA0 == 0)) {
 [e $ ! == -> . . _PORTAbits 0 0 `i -> 0 `i 370  ]
-"110
-[; ;main.c: 110:     {
 {
-"111
-[; ;main.c: 111:       do { LATBbits.LATB5 = 1; } while(0);
+"219
+[; ;main.c: 219:       do { LATBbits.LATB5 = 1; } while(0);
 [e :U 373 ]
 {
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 372 ]
-"112
-[; ;main.c: 112:       ((SW_STATE_Data[5]) |= (1 << (5)));
-[e =| *U + &U _SW_STATE_Data * -> -> -> 5 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 5 `i `uc ]
-"113
-[; ;main.c: 113:     }
+"220
+[; ;main.c: 220:     } else {
 }
 [e $U 374  ]
-"114
-[; ;main.c: 114:     else
 [e :U 370 ]
-"115
-[; ;main.c: 115:     {
 {
-"116
-[; ;main.c: 116:       do { LATBbits.LATB5 = 0; } while(0);
+"221
+[; ;main.c: 221:       do { LATBbits.LATB5 = 0; } while(0);
 [e :U 377 ]
 {
 [e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 376 ]
-"117
-[; ;main.c: 117:       ((SW_STATE_Data[5]) &= (~(1 << (5))));
-[e =& *U + &U _SW_STATE_Data * -> -> -> 5 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 5 `i `uc ]
-"118
-[; ;main.c: 118:     }
+"222
+[; ;main.c: 222:     }
 }
 [e :U 374 ]
-"121
-[; ;main.c: 121:     if (PORTAbits.RA1 == 0)
-[e $ ! == -> . . _PORTAbits 0 1 `i -> 0 `i 378  ]
-"122
-[; ;main.c: 122:     {
+"224
+[; ;main.c: 224:     if ((PORTAbits.RA1 == 1) && (PORTAbits.RA2 == 1)) {
+[e $ ! && == -> . . _PORTAbits 0 1 `i -> 1 `i == -> . . _PORTAbits 0 2 `i -> 1 `i 378  ]
 {
-"123
-[; ;main.c: 123:       do { LATBbits.LATB4 = 1; } while(0);
+"225
+[; ;main.c: 225:       do { LATBbits.LATB4 = 0; } while(0);
 [e :U 381 ]
-{
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 380 ]
-"124
-[; ;main.c: 124:       ((SW_STATE_Data[2]) |= (1 << (0)));
-[e =| *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 0 `i `uc ]
-"125
-[; ;main.c: 125:     }
-}
-[e $U 382  ]
-"126
-[; ;main.c: 126:     else
-[e :U 378 ]
-"127
-[; ;main.c: 127:     {
-{
-"128
-[; ;main.c: 128:       do { LATBbits.LATB4 = 0; } while(0);
-[e :U 385 ]
 {
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 }
+[e :U 380 ]
+"226
+[; ;main.c: 226:       do { LATBbits.LATB3 = 0; } while(0);
 [e :U 384 ]
-"129
-[; ;main.c: 129:       ((SW_STATE_Data[2]) &= (~(1 << (0))));
-[e =& *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 0 `i `uc ]
-"130
-[; ;main.c: 130:     }
-}
-[e :U 382 ]
-"133
-[; ;main.c: 133:     if (PORTAbits.RA2 == 0)
-[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 386  ]
-"134
-[; ;main.c: 134:     {
-{
-"135
-[; ;main.c: 135:       do { LATBbits.LATB3 = 1; } while(0);
-[e :U 389 ]
-{
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 388 ]
-"136
-[; ;main.c: 136:       ((SW_STATE_Data[1]) |= (1 << (3)));
-[e =| *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 3 `i `uc ]
-"137
-[; ;main.c: 137:     }
-}
-[e $U 390  ]
-"138
-[; ;main.c: 138:     else
-[e :U 386 ]
-"139
-[; ;main.c: 139:     {
-{
-"140
-[; ;main.c: 140:       do { LATBbits.LATB3 = 0; } while(0);
-[e :U 393 ]
 {
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 }
-[e :U 392 ]
-"141
-[; ;main.c: 141:       ((SW_STATE_Data[1]) &= (~(1 << (3))));
-[e =& *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 3 `i `uc ]
-"142
-[; ;main.c: 142:     }
+[e :U 383 ]
+"227
+[; ;main.c: 227:       SW_STATE_Data[2] = 0x51;
+[e = *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 81 `i `uc ]
+"229
+[; ;main.c: 229:       ((SW_STATE_Data[4]) &= (~(1 << (3))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 3 `i `uc ]
+"230
+[; ;main.c: 230:       ((SW_STATE_Data[4]) &= (~(1 << (0))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 0 `i `uc ]
+"231
+[; ;main.c: 231:       ((SW_STATE_Data[4]) &= (~(1 << (1))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 1 `i `uc ]
+"232
+[; ;main.c: 232:     } else if ((PORTAbits.RA1 == 0) && (PORTAbits.RA2 == 1)) {
 }
-[e :U 390 ]
-"145
-[; ;main.c: 145:     if (PORTAbits.RA3 == 0)
-[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 394  ]
-"146
-[; ;main.c: 146:     {
+[e $U 385  ]
+[e :U 378 ]
+[e $ ! && == -> . . _PORTAbits 0 1 `i -> 0 `i == -> . . _PORTAbits 0 2 `i -> 1 `i 386  ]
 {
-"147
-[; ;main.c: 147:       do { LATBbits.LATB2 = 1; } while(0);
+"233
+[; ;main.c: 233:       do { LATBbits.LATB4 = 1; } while(0);
+[e :U 389 ]
+{
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 388 ]
+"234
+[; ;main.c: 234:       do { LATBbits.LATB3 = 0; } while(0);
+[e :U 392 ]
+{
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+}
+[e :U 391 ]
+"235
+[; ;main.c: 235:       SW_STATE_Data[2] = 0x14;
+[e = *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 20 `i `uc ]
+"237
+[; ;main.c: 237:       ((SW_STATE_Data[4]) &= (~(1 << (3))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 3 `i `uc ]
+"238
+[; ;main.c: 238:       ((SW_STATE_Data[4]) |= (1 << (0)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+"239
+[; ;main.c: 239:       ((SW_STATE_Data[4]) |= (1 << (1)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 1 `i `uc ]
+"240
+[; ;main.c: 240:     } else if ((PORTAbits.RA1 == 1) && (PORTAbits.RA2 == 0)) {
+}
+[e $U 393  ]
+[e :U 386 ]
+[e $ ! && == -> . . _PORTAbits 0 1 `i -> 1 `i == -> . . _PORTAbits 0 2 `i -> 0 `i 394  ]
+{
+"241
+[; ;main.c: 241:       do { LATBbits.LATB4 = 0; } while(0);
 [e :U 397 ]
+{
+[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 396 ]
+"242
+[; ;main.c: 242:       do { LATBbits.LATB3 = 1; } while(0);
+[e :U 400 ]
+{
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 399 ]
+"243
+[; ;main.c: 243:       if ((PORTAbits.RA0 == 0)) {
+[e $ ! == -> . . _PORTAbits 0 0 `i -> 0 `i 401  ]
+{
+"244
+[; ;main.c: 244:         SW_STATE_Data[2] = 0x4C;
+[e = *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 76 `i `uc ]
+"246
+[; ;main.c: 246:         ((SW_STATE_Data[4]) &= (~(1 << (3))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 3 `i `uc ]
+"247
+[; ;main.c: 247:         ((SW_STATE_Data[4]) &= (~(1 << (0))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 0 `i `uc ]
+"248
+[; ;main.c: 248:         ((SW_STATE_Data[4]) &= (~(1 << (1))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 1 `i `uc ]
+"249
+[; ;main.c: 249:       } else {
+}
+[e $U 402  ]
+[e :U 401 ]
+{
+"250
+[; ;main.c: 250:         SW_STATE_Data[2] = 0x94;
+[e = *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 148 `i `uc ]
+"252
+[; ;main.c: 252:         ((SW_STATE_Data[4]) |= (1 << (3)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 3 `i `uc ]
+"253
+[; ;main.c: 253:         ((SW_STATE_Data[4]) |= (1 << (0)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+"254
+[; ;main.c: 254:         ((SW_STATE_Data[4]) |= (1 << (1)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 1 `i `uc ]
+"255
+[; ;main.c: 255:       }
+}
+[e :U 402 ]
+"256
+[; ;main.c: 256:     } else if ((PORTAbits.RA1 == 0) && (PORTAbits.RA2 == 0)) {
+}
+[e $U 403  ]
+[e :U 394 ]
+[e $ ! && == -> . . _PORTAbits 0 1 `i -> 0 `i == -> . . _PORTAbits 0 2 `i -> 0 `i 404  ]
+{
+"257
+[; ;main.c: 257:       do { LATBbits.LATB4 = 1; } while(0);
+[e :U 407 ]
+{
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 406 ]
+"258
+[; ;main.c: 258:       do { LATBbits.LATB3 = 1; } while(0);
+[e :U 410 ]
+{
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 409 ]
+"259
+[; ;main.c: 259:       SW_STATE_Data[2] = 0x13;
+[e = *U + &U _SW_STATE_Data * -> -> -> 2 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> -> 19 `i `uc ]
+"261
+[; ;main.c: 261:       ((SW_STATE_Data[4]) |= (1 << (3)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 3 `i `uc ]
+"262
+[; ;main.c: 262:       ((SW_STATE_Data[4]) |= (1 << (0)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 0 `i `uc ]
+"263
+[; ;main.c: 263:       ((SW_STATE_Data[4]) |= (1 << (1)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 4 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 1 `i `uc ]
+"264
+[; ;main.c: 264:     }
+}
+[e :U 404 ]
+[e :U 403 ]
+[e :U 393 ]
+[e :U 385 ]
+"267
+[; ;main.c: 267:     if ((PORTAbits.RA3 == 0)) {
+[e $ ! == -> . . _PORTAbits 0 3 `i -> 0 `i 411  ]
+{
+"268
+[; ;main.c: 268:       do { LATBbits.LATB2 = 1; } while(0);
+[e :U 414 ]
 {
 [e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 396 ]
-"148
-[; ;main.c: 148:       ((SW_STATE_Data[1]) |= (1 << (6)));
+[e :U 413 ]
+"269
+[; ;main.c: 269:       ((SW_STATE_Data[1]) |= (1 << (6)));
 [e =| *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 6 `i `uc ]
-"150
-[; ;main.c: 150:     }
+"270
+[; ;main.c: 270:       ((SW_STATE_Data[1]) |= (1 << (7)));
+[e =| *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 7 `i `uc ]
+"271
+[; ;main.c: 271:     } else {
 }
-[e $U 398  ]
-"151
-[; ;main.c: 151:     else
-[e :U 394 ]
-"152
-[; ;main.c: 152:     {
+[e $U 415  ]
+[e :U 411 ]
 {
-"153
-[; ;main.c: 153:       do { LATBbits.LATB2 = 0; } while(0);
-[e :U 401 ]
+"272
+[; ;main.c: 272:       do { LATBbits.LATB2 = 0; } while(0);
+[e :U 418 ]
 {
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 400 ]
-"154
-[; ;main.c: 154:       ((SW_STATE_Data[1]) &= (~(1 << (6))));
+[e :U 417 ]
+"273
+[; ;main.c: 273:       ((SW_STATE_Data[1]) &= (~(1 << (6))));
 [e =& *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 6 `i `uc ]
-"156
-[; ;main.c: 156:     }
+"274
+[; ;main.c: 274:       ((SW_STATE_Data[1]) &= (~(1 << (7))));
+[e =& *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 7 `i `uc ]
+"275
+[; ;main.c: 275:     }
 }
-[e :U 398 ]
-"159
-[; ;main.c: 159:     if (PORTAbits.RA4 == 0)
-[e $ ! == -> . . _PORTAbits 0 4 `i -> 0 `i 402  ]
-"160
-[; ;main.c: 160:    {
+[e :U 415 ]
+"278
+[; ;main.c: 278:     if ((PORTAbits.RA4 == 0)) {
+[e $ ! == -> . . _PORTAbits 0 4 `i -> 0 `i 419  ]
 {
-"161
-[; ;main.c: 161:       do { LATBbits.LATB1 = 1; } while(0);
-[e :U 405 ]
+"279
+[; ;main.c: 279:       do { LATBbits.LATB1 = 1; } while(0);
+[e :U 422 ]
 {
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 404 ]
-"162
-[; ;main.c: 162:       ((SW_STATE_Data[1]) |= (1 << (4)));
+[e :U 421 ]
+"280
+[; ;main.c: 280:       ((SW_STATE_Data[1]) |= (1 << (4)));
 [e =| *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 4 `i `uc ]
-"164
-[; ;main.c: 164:     }
+"281
+[; ;main.c: 281:     } else {
 }
-[e $U 406  ]
-"165
-[; ;main.c: 165:     else
-[e :U 402 ]
-"166
-[; ;main.c: 166:     {
+[e $U 423  ]
+[e :U 419 ]
 {
-"167
-[; ;main.c: 167:       do { LATBbits.LATB1 = 0; } while(0);
-[e :U 409 ]
+"282
+[; ;main.c: 282:       do { LATBbits.LATB1 = 0; } while(0);
+[e :U 426 ]
 {
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 408 ]
-"168
-[; ;main.c: 168:       ((SW_STATE_Data[1]) &= (~(1 << (4))));
+[e :U 425 ]
+"283
+[; ;main.c: 283:       ((SW_STATE_Data[1]) &= (~(1 << (4))));
 [e =& *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 4 `i `uc ]
-"170
-[; ;main.c: 170:     }
+"284
+[; ;main.c: 284:     }
 }
-[e :U 406 ]
-"173
-[; ;main.c: 173:     if (PORTCbits.RC3 == 0)
-[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 410  ]
-"174
-[; ;main.c: 174:    {
+[e :U 423 ]
+"287
+[; ;main.c: 287:     if ((PORTCbits.RC3 == 0)) {
+[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 427  ]
 {
-"175
-[; ;main.c: 175:       do { LATBbits.LATB0 = 1; } while(0);
-[e :U 413 ]
+"288
+[; ;main.c: 288:       do { LATBbits.LATB0 = 1; } while(0);
+[e :U 430 ]
 {
 [e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 412 ]
-"177
-[; ;main.c: 177:       ((SW_STATE_Data[1]) |= (1 << (5)));
+[e :U 429 ]
+"289
+[; ;main.c: 289:       ((SW_STATE_Data[1]) |= (1 << (5)));
 [e =| *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> << -> 1 `i -> 5 `i `uc ]
-"178
-[; ;main.c: 178:     }
+"290
+[; ;main.c: 290:     } else {
 }
-[e $U 414  ]
-"179
-[; ;main.c: 179:     else
-[e :U 410 ]
-"180
-[; ;main.c: 180:     {
+[e $U 431  ]
+[e :U 427 ]
 {
-"181
-[; ;main.c: 181:       do { LATBbits.LATB0 = 0; } while(0);
-[e :U 417 ]
+"291
+[; ;main.c: 291:       do { LATBbits.LATB0 = 0; } while(0);
+[e :U 434 ]
 {
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 416 ]
-"183
-[; ;main.c: 183:       ((SW_STATE_Data[1]) &= (~(1 << (5))));
+[e :U 433 ]
+"292
+[; ;main.c: 292:       ((SW_STATE_Data[1]) &= (~(1 << (5))));
 [e =& *U + &U _SW_STATE_Data * -> -> -> 1 `i `ui `ux -> -> # *U &U _SW_STATE_Data `ui `ux -> ~ << -> 1 `i -> 5 `i `uc ]
-"184
-[; ;main.c: 184:     }
+"293
+[; ;main.c: 293:     }
 }
-[e :U 414 ]
-"185
-[; ;main.c: 185:   }
+[e :U 431 ]
+"294
+[; ;main.c: 294:   }
 }
 [e :U 367 ]
 [e $U 368  ]
 [e :U 369 ]
-"186
-[; ;main.c: 186: }
+"295
+[; ;main.c: 295: }
 [e :UE 366 ]
 }

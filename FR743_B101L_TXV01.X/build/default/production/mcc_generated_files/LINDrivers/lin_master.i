@@ -5218,6 +5218,12 @@ void LIN_queuePacket(uint8_t cmd, uint8_t* data){
 
         LIN_packet.checksum = LIN_getChecksum(LIN_packet.length, LIN_packet.PID, LIN_packet.data);
 
+
+
+
+
+
+
     } else {
         LIN_rxPacket.rxLength = tempSchedule->length;
         LIN_rxPacket.cmd = tempSchedule->cmd;

@@ -25,15 +25,17 @@ add_library(FR682_TXV01_default_default_XC8_compile OBJECT ${FR682_TXV01_default
     list(APPEND FR682_TXV01_default_library_list "$<TARGET_OBJECTS:FR682_TXV01_default_default_XC8_compile>")
 endif()
 
+add_executable(FR682_TXV01_default_image_iNKkEzIG ${FR682_TXV01_default_library_list})
 
-add_executable(${FR682_TXV01_default_image_name} ${FR682_TXV01_default_library_list})
-set_target_properties(${FR682_TXV01_default_image_name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${FR682_TXV01_default_output_dir})
+set_target_properties(FR682_TXV01_default_image_iNKkEzIG PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${FR682_TXV01_default_output_dir})
+set_target_properties(FR682_TXV01_default_image_iNKkEzIG PROPERTIES OUTPUT_NAME "default")
+set_target_properties(FR682_TXV01_default_image_iNKkEzIG PROPERTIES SUFFIX ".elf")
 
-target_link_libraries(${FR682_TXV01_default_image_name} PRIVATE ${FR682_TXV01_default_default_XC8_FILE_TYPE_link})
+target_link_libraries(FR682_TXV01_default_image_iNKkEzIG PRIVATE ${FR682_TXV01_default_default_XC8_FILE_TYPE_link})
+
 
 # Add the link options from the rule file.
-FR682_TXV01_default_link_rule(${FR682_TXV01_default_image_name})
-
+FR682_TXV01_default_link_rule(FR682_TXV01_default_image_iNKkEzIG)
 
 
 

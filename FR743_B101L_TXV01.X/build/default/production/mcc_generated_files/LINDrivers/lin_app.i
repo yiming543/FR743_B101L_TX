@@ -296,7 +296,7 @@ uint8_t SW_STATE_Data[8];
 
 const lin_cmd_packet_t scheduleTable[] = {
 
-    {SW_STATE, TRANSMIT, 8, 20, 30, SW_STATE_Data }
+    {SW_STATE, TRANSMIT, 8, 15, 20, SW_STATE_Data }
 };
 
 

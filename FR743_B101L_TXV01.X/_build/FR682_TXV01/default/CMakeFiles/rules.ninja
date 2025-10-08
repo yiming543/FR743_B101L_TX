@@ -17,14 +17,14 @@
 rule C_COMPILER__FR682_TXV01_default_default_XC8_compile_unscanned_
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}c:\PROGRA~1\MICROC~1\xc8\v2.46\bin\xc8-cc.exe $DEFINES $INCLUDES $FLAGS -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}c:\PROGRA~1\MICROC~1\xc8\v2.46\bin\xc8-cc.exe $DEFINES $INCLUDES $FLAGS -MD -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
 #############################################
 # Rule for linking C executable.
 
-rule C_EXECUTABLE_LINKER__default.2eelf_
+rule C_EXECUTABLE_LINKER__FR682_TXV01_default_image_iNKkEzIG_
   command = cmd.exe /C "$PRE_LINK && c:\PROGRA~1\MICROC~1\xc8\v2.46\bin\xc8-cc.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\t00904\.mplab\app-finder\apps\cmake\v4.0.3\cmake-4.0.3-windows-x86_64\bin\cmake.exe --regenerate-during-build -SD:\yiming\work\FR682_TXV01.X\cmake\FR682_TXV01\default -BD:\yiming\work\FR682_TXV01.X\_build\FR682_TXV01\default
+  command = C:\Users\t00904\.mplab\app-finder\apps\cmake\v4.0.3\cmake-4.0.3-windows-x86_64\bin\cmake.exe --regenerate-during-build -SD:\yiming\00work\FR743_B101L_TXV01.X\cmake\FR682_TXV01\default -BD:\yiming\00work\FR743_B101L_TXV01.X\_build\FR682_TXV01\default
   description = Re-running CMake...
   generator = 1
 

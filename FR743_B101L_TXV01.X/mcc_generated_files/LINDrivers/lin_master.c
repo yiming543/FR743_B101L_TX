@@ -96,7 +96,13 @@ void LIN_queuePacket(uint8_t cmd, uint8_t* data){
 
         //Add Checksum
         LIN_packet.checksum = LIN_getChecksum(LIN_packet.length, LIN_packet.PID, LIN_packet.data);
-
+        // if(LIN_packet.checksum == 0x05)
+        // {
+        //     NOP();
+        //     NOP();
+        //     NOP();
+        // }
+    
     } else { //Rx packet
         LIN_rxPacket.rxLength = tempSchedule->length; //data length for rx data processing
         LIN_rxPacket.cmd = tempSchedule->cmd; //command for rx data processing
