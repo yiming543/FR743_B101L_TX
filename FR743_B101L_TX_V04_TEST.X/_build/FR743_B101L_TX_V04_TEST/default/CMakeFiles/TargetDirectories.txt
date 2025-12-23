@@ -1,0 +1,4 @@
+D:/yiming/00work/FR743_B101L_TX_V04_TEST.X/_build/FR743_B101L_TX_V04_TEST/default/CMakeFiles/FR743_B101L_TX_V04_TEST_default_default_XC8_compile.dir
+D:/yiming/00work/FR743_B101L_TX_V04_TEST.X/_build/FR743_B101L_TX_V04_TEST/default/CMakeFiles/FR743_B101L_TX_V04_TEST_default_image_FguEUHyy.dir
+D:/yiming/00work/FR743_B101L_TX_V04_TEST.X/_build/FR743_B101L_TX_V04_TEST/default/CMakeFiles/edit_cache.dir
+D:/yiming/00work/FR743_B101L_TX_V04_TEST.X/_build/FR743_B101L_TX_V04_TEST/default/CMakeFiles/rebuild_cache.dir
